@@ -39,7 +39,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Ligne 2 : Navigation */}
+        
         <div className="flex justify-between items-center pt-5 text-xs uppercase tracking-widest text-stone-600 font-semibold">
           <nav className="flex gap-8">
             <a href="#about" className="hover:text-black transition-colors">À Propos</a>
@@ -59,11 +59,9 @@ const HomePage = () => {
         </div>
       </header>
 
-      {/* 2. HERO BANNER */}
       <section className="max-w-7xl mx-auto px-8 my-6">
         <div className="bg-[#f3f2ee] p-12 lg:p-20 flex flex-col lg:flex-row items-center justify-between min-h-[460px] relative border border-stone-200">
           
-          {/* Bloc Texte Gauche */}
           <div className="lg:w-1/2 space-y-6 z-10">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15]">
               Bienvenue sur <br />
@@ -84,7 +82,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Card Droite */}
           <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end z-10">
             <div className="bg-white p-10 border-2 border-stone-300 shadow-lg max-w-sm w-full space-y-6">
               <div className="flex items-center gap-4 pb-4 border-b border-stone-200">
@@ -110,7 +107,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 3. SECTION CARACTERISTIQUES */}
       <section id="features" className="max-w-7xl mx-auto px-8 py-16 relative">
         <button className="absolute left-2 top-1/2 -translate-y-1/2 text-stone-400 hover:text-black transition-colors">
           <ChevronLeft className="w-6 h-6 stroke-[1.5]" />
@@ -164,11 +160,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 4. SECTION À PROPOS */}
       <section id="about" className="max-w-7xl mx-auto px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Bloc Visuel Gauche */}
           <div className="lg:col-span-5 relative">
             <div className="absolute -left-4 -bottom-4 w-full h-full bg-[#dbe4d8] z-0 border border-stone-300"></div>
             
@@ -189,7 +183,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Bloc Texte Droite */}
           <div className="lg:col-span-7 space-y-6 pl-0 lg:pl-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
               Quelques Mots À <br />
@@ -204,7 +197,6 @@ const HomePage = () => {
               Nous proposons une solution raffinée et hautement sécurisée permettant aux universités et établissements d'enseignement supérieur d'optimiser leurs processus d'évaluation. Notre plateforme élimine le temps consacré aux corrections manuelles et garantit une rigueur absolue dans le traitement des résultats.
             </p>
 
-            {/* Liste avec encochées */}
             <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-xs text-slate-900 pt-2 font-bold tracking-wide">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-slate-900 stroke-[2.5]" />
@@ -249,7 +241,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 5. FOOTER */}
       <footer id="contact" className="border-t border-stone-300 mt-20 py-10 text-xs text-stone-600 font-medium">
         <div className="max-w-7xl mx-auto px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© 2026 Exam Hub — Tous droits réservés.</p>

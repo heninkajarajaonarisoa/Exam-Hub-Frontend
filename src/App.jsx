@@ -38,7 +38,6 @@ export default function App() {
         
         <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[500px] animate-bounce-zoom">
           
-          {/* Côté Gauche - Animation Bounce depuis la Gauche */}
           <div className="md:col-span-6 bg-gradient-to-br from-[#6C5CE7] via-[#8C7AE6] to-[#E84393] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden text-white animate-bounce-left">
             
             <div className="absolute top-[-20%] left-[-10%] w-56 h-56 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
@@ -69,7 +68,6 @@ export default function App() {
 
           </div>
 
-          {/* Côté Droit - Formulaire avec Animation Bounce depuis la Droite */}
           <div className="md:col-span-6 bg-white p-8 sm:p-12 flex flex-col justify-center animate-bounce-right">
             
             <div className="max-w-xs mx-auto w-full space-y-6">
@@ -150,7 +148,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-slate-700 font-sans antialiased overflow-x-hidden">
       
-      {/* 1. TOP NAVBAR - Animation Bounce depuis le Haut */}
       <header className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between animate-bounce-down">
         
         <div className="flex items-center gap-2">
@@ -190,13 +187,11 @@ export default function App() {
 
       </header>
 
-      {/* 2. HERO SECTION */}
       <section id="home" className="max-w-7xl mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
         
         <div className="absolute top-10 left-4 w-2 h-2 rounded-full bg-orange-400 opacity-60"></div>
         <div className="absolute top-24 left-16 w-3 h-3 rounded-full bg-orange-200 opacity-80"></div>
         
-        {/* Texte du Hero - Bounce depuis la Gauche */}
         <div className="lg:col-span-6 space-y-6 animate-bounce-left">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
             We create <br />
@@ -228,7 +223,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Image du Hero - Bounce depuis la Droite */}
         <div className="lg:col-span-6 flex justify-center relative animate-bounce-right">
           <div className="relative w-full max-w-lg">
             <img 
@@ -237,7 +231,6 @@ export default function App() {
               className="w-full h-80 sm:h-96 object-cover rounded-3xl shadow-xl"
             />
             
-            {/* Badge flottant avec Zoom Bounce */}
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce-zoom">
               <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-500 flex items-center justify-center">
                 <Sparkles className="w-5 h-5" />
@@ -252,7 +245,6 @@ export default function App() {
 
       </section>
 
-      {/* 3. SECTION SERVICES - Cartes animées de Bas en Haut */}
       <section id="services" className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center max-w-md mx-auto mb-12 space-y-2 animate-bounce-down">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
@@ -263,7 +255,6 @@ export default function App() {
           </p>
         </div>
 
-        {/* Cartes avec animations escalonnées (Left, Up, Up, Right) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 space-y-4 animate-bounce-left">
@@ -309,11 +300,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. SECTION PROCESS */}
       <section id="process" className="bg-[#FFF4EC] py-16">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Image - Bounce Left */}
           <div className="lg:col-span-5 flex justify-center animate-bounce-left">
             <img 
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" 
@@ -322,7 +311,6 @@ export default function App() {
             />
           </div>
 
-          {/* Liste - Bounce Right */}
           <div className="lg:col-span-7 space-y-6 animate-bounce-right">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
               Simple <span className="text-orange-500">Solutions!</span>
@@ -396,7 +384,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. SECTION ABOUT */}
       <section id="about" className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -430,7 +417,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. FOOTER - Animation Bounce Up */}
       <footer className="bg-[#FFF4EC] mt-12 pt-12 pb-6 border-t border-orange-100 animate-bounce-up">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-orange-200/50">
           

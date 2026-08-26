@@ -19,36 +19,36 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#6C5CE7] via-[#A29BFE] to-[#FD79A8] p-4 sm:p-6 font-sans">
       
-      {/* Carte Principale de Connexion */}
+
       <div className="w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
         
-        {/* Côté Gauche - Illustration et Message de Bienvenue */}
+
         <div className="md:col-span-6 bg-gradient-to-br from-[#6C5CE7] via-[#8C7AE6] to-[#E84393] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden text-white">
           
-          {/* Motifs géométriques abstraits (Gélules & Formes diagonales) */}
+
           <div className="absolute top-[-20%] left-[-10%] w-56 h-56 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
           
-          {/* Forme pilule 1 */}
+
           <div className="absolute bottom-[-10%] left-[-10%] w-28 h-64 bg-gradient-to-t from-[#FF7675]/80 to-[#FAB1A0]/40 rounded-full transform -rotate-45 pointer-events-none"></div>
           
-          {/* Forme pilule 2 */}
+
           <div className="absolute bottom-[10%] left-[25%] w-20 h-52 bg-gradient-to-t from-[#FF7675]/90 to-[#FFEAA7]/40 rounded-full transform -rotate-45 pointer-events-none"></div>
           
-          {/* Forme pilule 3 */}
+  
           <div className="absolute bottom-[30%] left-[50%] w-16 h-40 bg-gradient-to-t from-[#FD79A8] to-[#FAB1A0]/30 rounded-full transform -rotate-45 pointer-events-none"></div>
 
-          {/* Lignes de vitesse diagonales */}
+
           <div className="absolute bottom-[25%] left-[15%] w-2 h-24 bg-amber-300/60 rounded-full transform -rotate-45 pointer-events-none"></div>
           <div className="absolute bottom-[40%] left-[38%] w-1.5 h-20 bg-amber-200/50 rounded-full transform -rotate-45 pointer-events-none"></div>
 
-          {/* En-tête / Logo */}
+
           <div className="relative z-10">
             <Link to="/" className="text-xs font-bold tracking-widest uppercase text-white/80 hover:text-white transition-colors">
               ← EXAM HUB
             </Link>
           </div>
 
-          {/* Textes de bienvenue */}
+
           <div className="relative z-10 my-auto py-8">
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 leading-tight">
               Bienvenue sur <br />EXAM HUB
@@ -64,22 +64,18 @@ const LoginPage = () => {
 
         </div>
 
-        {/* Côté Droit - Formulaire de Connexion */}
         <div className="md:col-span-6 bg-white p-8 sm:p-12 flex flex-col justify-center">
           
           <div className="max-w-xs mx-auto w-full space-y-6">
             
-            {/* Titre du Formulaire */}
             <div className="text-center">
               <h2 className="text-xs font-bold uppercase tracking-widest text-[#6C5CE7]">
                 Espace Connexion
               </h2>
             </div>
 
-            {/* Formulaire */}
             <form onSubmit={handleSubmit} className="space-y-4">
               
-              {/* Champ Identifiant */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#6C5CE7]/60">
                   <User className="w-4 h-4" />
@@ -94,7 +90,6 @@ const LoginPage = () => {
                 />
               </div>
 
-              {/* Champ Mot de passe */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#6C5CE7]/60">
                   <Lock className="w-4 h-4" />
@@ -109,7 +104,6 @@ const LoginPage = () => {
                 />
               </div>
 
-              {/* Option Se souvenir & Mot de passe oublié */}
               <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1 px-1">
                 <label className="flex items-center gap-1.5 cursor-pointer select-none">
                   <div className="relative">
@@ -133,7 +127,6 @@ const LoginPage = () => {
                 </a>
               </div>
 
-              {/* Bouton de Connexion */}
               <div className="pt-2 text-center">
                 <button
                   type="submit"
