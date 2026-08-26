@@ -1,11 +1,4 @@
-// -----------------------------------------------------------------------
-// MOCK API — mirrors the real backend routes described in the sujet.
-// Every function here returns a Promise, has the same name/shape as the
-// real call would, and throws { status, message } on "server" errors —
-// exactly like a real fetch() wrapper would. Swapping this file for a
-// real src/api/http.js that calls the Express API is meant to be a
-// drop-in replacement; page components should not need to change.
-// -----------------------------------------------------------------------
+
 
 const DELAY = 350;
 const wait = (ms = DELAY) => new Promise((res) => setTimeout(res, ms));

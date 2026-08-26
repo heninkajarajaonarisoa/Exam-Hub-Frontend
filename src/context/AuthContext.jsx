@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import * as api from "../api/mockApi";
+import * as api from "../api/authApi"; 
 
 const AuthContext = createContext(null);
 
@@ -10,6 +10,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [ready, setReady] = useState(false);
 
+  
   useEffect(() => {
     try {
       const raw = localStorage.getItem(SESSION_KEY);
@@ -19,11 +20,13 @@ export function AuthProvider({ children }) {
         setToken(savedToken);
       }
     } catch {
-      // ignore corrupt session
+      
+      localStorage.removeItem(SESSION_KEY);
     }
     setReady(true);
   }, []);
 
+  
   async function login(email, password) {
     const { token: t, user: u } = await api.login(email, password);
     setUser(u);
@@ -32,6 +35,7 @@ export function AuthProvider({ children }) {
     return u;
   }
 
+  
   function logout() {
     setUser(null);
     setToken(null);
