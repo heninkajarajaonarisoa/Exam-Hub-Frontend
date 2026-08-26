@@ -10,11 +10,10 @@ import {
   Check
 } from 'lucide-react';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fafaf9] text-slate-900 font-mono tracking-tight">
       
-
       <header className="max-w-7xl mx-auto px-8 pt-8 pb-4">
         <div className="flex justify-between items-center pb-6 border-b border-stone-200">
           <div className="flex items-center gap-3">
@@ -39,7 +38,6 @@ const HomePage = () => {
           </div>
         </div>
 
-        
         <div className="flex justify-between items-center pt-5 text-xs uppercase tracking-widest text-stone-600 font-semibold">
           <nav className="flex gap-8">
             <a href="#about" className="hover:text-black transition-colors">À Propos</a>
@@ -253,6 +251,4 @@ const HomePage = () => {
 
     </div>
   );
-};
-
-export default HomePage;
+}
