@@ -52,7 +52,7 @@ export default function DashboardLayout({ links, children }) {
             onClick={handleLogout}
             className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-500 hover:bg-slate-50 hover:text-red-500 transition-colors cursor-pointer"
           >
-            <LogOut className="w-4 h-4" /> Se déconnecter
+            <LogOut className="w-4 h-4" /> Log out
           </button>
         </div>
       </aside>

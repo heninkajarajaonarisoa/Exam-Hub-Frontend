@@ -38,7 +38,7 @@ export default function HomePage() {
             to="/login"
             className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-xs font-bold shadow-md shadow-orange-500/20 transition-all cursor-pointer inline-block"
           >
-            Se Connecter
+            Log in
           </Link>
         </div>
 
@@ -58,7 +58,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-slate-500 text-xs sm:text-sm max-w-md leading-relaxed">
-            Notre plateforme permet aux enseignants et étudiants de gérer l'intégralité des évaluations QCM avec simplicité, chronométrage strict et correction automatisée.
+           Our platform allows teachers and students to manage all MCQ assessments with simplicity, strict timing and automated correction.
           </p>
 
           <div className="flex items-center gap-4 pt-2">
@@ -94,8 +94,8 @@ export default function HomePage() {
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-900">100% Automatisé</p>
-                <p className="text-[10px] text-slate-400">Résultats en direct</p>
+                <p className="text-xs font-bold text-slate-900">100% Automated</p>
+                <p className="text-[10px] text-slate-400">Live results</p>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function HomePage() {
             We Provide The Best <span className="text-orange-500">Services</span>
           </h2>
           <p className="text-xs text-slate-400">
-            Optimisez chaque étape de vos sessions de test grâce à nos outils intelligents.
+            Optimize every step of your testing sessions with our intelligent tools.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function HomePage() {
             </div>
             <h3 className="text-sm font-bold text-slate-900">Banque QCM</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Créez et organisez vos questions par matières et catégories en toute simplicité.
+              Create and organize your questions by subject and category with ease.
             </p>
           </div>
 
@@ -130,9 +130,9 @@ export default function HomePage() {
             <div className="w-10 h-10 rounded-xl bg-emerald-400 text-white flex items-center justify-center shadow-md shadow-emerald-400/30">
               <Clock className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Chronométrage</h3>
+            <h3 className="text-sm font-bold text-slate-900">Timing</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Gestion précise du temps imparti par question ou pour l'ensemble du sujet.
+              Precise management of the time allotted per question or for the entire subject.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
             </div>
             <h3 className="text-sm font-bold text-slate-900">Auto-Correction</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Obtenez le calcul automatique des résultats et un classement instantané.
+             Get automatic results calculation and instant ranking.
             </p>
           </div>
 
@@ -150,9 +150,9 @@ export default function HomePage() {
             <div className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md shadow-orange-500/30">
               <Award className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Sécurité & PV</h3>
+            <h3 className="text-sm font-bold text-slate-900">Security & PV</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Génération automatique des procès-verbaux d'examen sécurisés.
+              Automatic generation of secure examination reports.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ export default function HomePage() {
             </h2>
             
             <p className="text-xs text-slate-500 leading-relaxed max-w-lg">
-              Une prise en main rapide pensée pour que chaque enseignant puisse déployer une épreuve en moins de 5 minutes.
+             A quick setup designed so that each teacher can deploy a test in less than 5 minutes.
             </p>
 
             <div className="space-y-4 pt-2">
@@ -187,8 +187,8 @@ export default function HomePage() {
                   1
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Créer un compte</h4>
-                  <p className="text-[11px] text-slate-500">Inscrivez-vous en tant qu'administrateur ou candidat.</p>
+                  <h4 className="text-xs font-bold text-slate-900">Create an account </h4>
+                  <p className="text-[11px] text-slate-500">Register as an administrator or candidate.</p>
                 </div>
               </div>
 
@@ -197,8 +197,8 @@ export default function HomePage() {
                   2
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Configurer l'épreuve</h4>
-                  <p className="text-[11px] text-slate-500">Choisissez le sujet, la durée et ajoutez vos questions.</p>
+                  <h4 className="text-xs font-bold text-slate-900">Configure the test</h4>
+                  <p className="text-[11px] text-slate-500">Choose the topic, the duration, and add your questions.</p>
                 </div>
               </div>
 
@@ -207,8 +207,8 @@ export default function HomePage() {
                   3
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Inviter les candidats</h4>
-                  <p className="text-[11px] text-slate-500">Partagez l'accès sécurisé à la session d'examen.</p>
+                  <h4 className="text-xs font-bold text-slate-900">Invite the candidates</h4>
+                  <p className="text-[11px] text-slate-500">Share secure access to the exam session.</p>
                 </div>
               </div>
 
@@ -217,8 +217,8 @@ export default function HomePage() {
                   4
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Consulter les résultats</h4>
-                  <p className="text-[11px] text-slate-500">Obtenez les notes corrigées automatiquement et exportez-les.</p>
+                  <h4 className="text-xs font-bold text-slate-900">View the results</h4>
+                  <p className="text-[11px] text-slate-500">Get the grades corrected automatically and export them.</p>
                 </div>
               </div>
 
@@ -248,7 +248,7 @@ export default function HomePage() {
             </h2>
 
             <p className="text-xs text-slate-500 leading-relaxed max-w-md">
-              Nous croyons en la puissance des évaluations modernes et équitables. Notre approche sécurisée et axée sur l'expérience utilisateur garantit un déroulement sans faille de vos sessions d'examens.
+              We believe in the power of modern and fair assessments. Our secure, user-centric approach ensures your exam sessions run smoothly.
             </p>
 
             <div className="pt-2">
@@ -287,7 +287,7 @@ export default function HomePage() {
             </div>
             
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              Plateforme certifiée d'évaluation et d'examens automatisés pour établissements d'enseignement.
+              Certified platform for automated assessment and examinations for educational institutions.
             </p>
           </div>
 
@@ -318,7 +318,7 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-6 text-center text-[10px] text-slate-400 font-medium">
-          © 2026 EXAM HUB — Tous droits réservés.
+          © 2026 EXAM HUB — All rights reserved.
         </div>
       </footer>
 

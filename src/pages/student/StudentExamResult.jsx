@@ -19,7 +19,7 @@ export default function StudentExamResult() {
     return (
       <div>
         <Link to="/student" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-700 mb-4">
-          <ArrowLeft className="w-3.5 h-3.5" /> Retour
+          <ArrowLeft className="w-3.5 h-3.5" /> Back
         </Link>
         <ErrorBanner message={error} />
       </div>
@@ -33,7 +33,7 @@ export default function StudentExamResult() {
   return (
     <div>
       <Link to="/student" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-700 mb-4">
-        <ArrowLeft className="w-3.5 h-3.5" /> Retour aux examens
+        <ArrowLeft className="w-3.5 h-3.5" /> Back to exams
       </Link>
 
       <PageHeader title={result.examTitle} subtitle="Correction détaillée de votre épreuve." />
@@ -41,7 +41,7 @@ export default function StudentExamResult() {
       <div className="bg-white p-6 rounded-2xl border border-slate-100 mb-6 flex items-center justify-between">
         <div>
           <p className="text-3xl font-extrabold text-slate-900">{result.score} / {total}</p>
-          <p className="text-xs text-slate-400 mt-1">Soumis le {new Date(result.submittedAt).toLocaleString("fr-FR")}</p>
+          <p className="text-xs text-slate-400 mt-1">Submitted on {new Date(result.submittedAt).toLocaleString("fr-FR")}</p>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ export default function StudentExamResult() {
                   <div key={c.id} className={`flex items-center justify-between text-xs px-3 py-2 rounded-lg ${style}`}>
                     <span>{c.text}</span>
                     <span className="flex items-center gap-2">
-                      {isSelected && <span className="text-[10px] uppercase font-bold opacity-70">Votre choix</span>}
+                      {isSelected && <span className="text-[10px] uppercase font-bold opacity-70">Your choice</span>}
                       {isCorrectChoice && <Check className="w-3.5 h-3.5" />}
                       {isSelected && !isCorrectChoice && <X className="w-3.5 h-3.5" />}
                     </span>

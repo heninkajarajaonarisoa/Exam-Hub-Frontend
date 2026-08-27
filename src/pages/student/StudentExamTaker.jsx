@@ -43,7 +43,7 @@ export default function StudentExamTaker() {
     return (
       <div>
         <Link to="/student" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-700 mb-4">
-          <ArrowLeft className="w-3.5 h-3.5" /> Retour
+          <ArrowLeft className="w-3.5 h-3.5" /> Back
         </Link>
         <ErrorBanner message={error} />
       </div>
@@ -89,17 +89,17 @@ export default function StudentExamTaker() {
 
       <div className="sticky bottom-0 mt-6 bg-white/90 backdrop-blur border border-slate-100 rounded-2xl p-4 flex items-center justify-between shadow-lg">
         <p className="text-xs font-semibold text-slate-500">
-          {answeredCount} / {exam.questions.length} question(s) répondue(s)
+          {answeredCount} / {exam.questions.length} question(s) answered
         </p>
-        <Button onClick={() => setConfirmOpen(true)}>Soumettre l'examen</Button>
+        <Button onClick={() => setConfirmOpen(true)}>Submit the exam</Button>
       </div>
 
       <Modal open={confirmOpen} onClose={() => setConfirmOpen(false)} title="Confirmer la soumission">
         <p className="text-sm text-slate-600 mb-2">
-          Vous avez répondu à {answeredCount} question(s) sur {exam.questions.length}.
+         You have answered {answeredCount} question(s) on {exam.questions.length}.
         </p>
         <p className="text-xs text-slate-400 mb-5">
-          La soumission est définitive et unique : vous ne pourrez pas repasser cet examen ni modifier vos réponses ensuite.
+        The submission is final and unique: you will not be able to retake this exam or change your answers afterwards.
         </p>
         <div className="flex gap-3">
           <Button variant="ghost" onClick={() => setConfirmOpen(false)} className="flex-1">Annuler</Button>
