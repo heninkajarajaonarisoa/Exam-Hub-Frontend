@@ -23,5 +23,6 @@ export async function fetchApi(endpoint, options = {}) {
     throw new Error(errorData.message || "Une erreur est survenue");
   }
 
-  return response.json();
+  if (response.status === 204) return null;
+return response.json();
 }
