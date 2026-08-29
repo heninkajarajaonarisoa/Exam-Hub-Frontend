@@ -33,14 +33,14 @@ export default function StudentDashboard() {
                 <p className="text-sm text-slate-500 mt-1">{exam.description}</p>
                 <div className="flex items-center gap-4 mt-4 text-xs text-slate-400 font-medium">
                   <span className="inline-flex items-center gap-1.5"><BookOpen className="w-3.5 h-3.5" /> {exam.questionCount} questions</span>
-                  <span className="inline-flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> jusqu'au {new Date(exam.endAt).toLocaleDateString("fr-FR")}</span>
+                  <span className="inline-flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> until {new Date(exam.endAt).toLocaleDateString("fr-FR")}</span>
                 </div>
               </div>
               <Link
                 to={`/student/exams/${exam.id}`}
                 className="mt-5 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-xs font-bold transition-all"
               >
-                Commencer l'épreuve <ArrowRight className="w-3.5 h-3.5" />
+                start the test <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           ))}

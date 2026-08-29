@@ -69,3 +69,8 @@ Rien ici n'est fait pour remplacer votre travail — objectif : piocher ce qui m
 - La landing page publique (Home/About/Services/Blog) n'est pas incluse ici — elle n'est de
   toute façon pas dans les routes imposées par le sujet, gardez votre version existante et
   branchez juste `/login` dessus.
+
+
+## Le compte fonctionnel  
+Email    : admin@exam-hub.test
+Password : Admin123!

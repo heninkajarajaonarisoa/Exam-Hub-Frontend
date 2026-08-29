@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 export async function fetchApi(endpoint, options = {}) {
   const session = localStorage.getItem("examhub_session_v1");
@@ -23,5 +23,6 @@ export async function fetchApi(endpoint, options = {}) {
     throw new Error(errorData.message || "Une erreur est survenue");
   }
 
-  return response.json();
+  if (response.status === 204) return null;
+return response.json();
 }
