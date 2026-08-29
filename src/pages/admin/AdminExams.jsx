@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Plus, Pencil, Trash2, ListChecks, BarChart3 } from "lucide-react";
-import * as api from "../../api/mockApi";
+import * as api from "../../api/realApi";
 import { PageHeader, ErrorBanner, Badge, Button, Modal, Field, inputClass, EmptyState } from "../../components/ui";
 
 const emptyForm = { courseId: "", title: "", description: "", startAt: "", endAt: "" };

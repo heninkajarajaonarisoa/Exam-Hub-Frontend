@@ -1,15 +1,35 @@
-# Exam Hub — Prototype Frontend (routing + rôles)
+# Exam Hub — Frontend
 
-Ce projet est un **prototype autonome**, séparé de votre repo actuel, pour tester la structure
-de routes/rôles imposée par le sujet **avant fusion**. Il n'a pas de backend : toutes les
-données sont simulées dans `src/api/mockApi.js` et persistées dans le `localStorage` du
-navigateur (recharger la page ne perd rien ; effacer le localStorage relance les données de
-départ).
+Interface web (React + Vite) pour Exam Hub, connectée à l'API réelle du backend
+(dépôt séparé `Exam-Hub-Backend`, requis pour que cette application fonctionne).
 
-## Lancer le projet
+## Prérequis
+
+- Node.js et npm installés
+- Le backend **Exam-Hub-Backend déjà installé, migré, seedé et lancé** (voir son propre
+  README) — cette application ne fonctionne pas seule, elle a besoin de l'API sur
+  `http://localhost:3000` par défaut.
+
+## Installation
 
 ```bash
 npm install
+```
+
+## Configuration
+
+Copiez le fichier d'exemple :
+
+```bash
+cp .env.example .env
+```
+
+`VITE_API_URL` doit pointer vers l'API du backend (`http://localhost:3000/api` par
+défaut). Adaptez uniquement si votre backend tourne sur un autre port.
+
+## Lancement
+
+```bash
 npm run dev
 ```
 
@@ -17,60 +37,35 @@ Puis ouvrez `http://localhost:5173`.
 
 ## Comptes de test
 
-| Rôle | Email | Mot de passe |
-| --- | --- | --- |
-| Admin | `admin@hei.mg` | `admin123` |
-| Étudiant (actif) | `rina@hei.mg` | `student123` |
-| Étudiant (actif, aucun examen passé) | `tojo@hei.mg` | `student123` |
-| Étudiant (désactivé, pour tester RG-11) | `fara@hei.mg` | `student123` |
+Il n'y a pas d'auto-inscription (RG-01) : le seul compte qui existe après l'installation
+du backend est l'administrateur créé par `npm run seed` côté backend — utilisez l'email et
+le mot de passe affichés à ce moment-là (par défaut définis dans le `.env` du backend :
+`SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`).
 
-## Ce que ça démontre
+Pour tester le côté étudiant, connectez-vous en admin puis créez un ou plusieurs comptes
+étudiants depuis `/admin/students`.
 
-- Toutes les routes imposées par le sujet, déclarées avec `react-router-dom` (`/login`,
-  `/admin/...`, `/student/...`).
-- Protection par rôle : non connecté → redirigé vers `/login` ; connecté avec le mauvais rôle →
-  redirigé vers son propre espace (`ProtectedRoute.jsx`).
-- Règles de gestion simulées côté "serveur" mock (dans `mockApi.js`, pas dans les composants) :
-  - RG-02 : un étudiant ne peut soumettre un examen qu'une fois.
-  - RG-03 : un examen n'est visible/soumissible que dans sa fenêtre de disponibilité.
-  - RG-04 : 2 à 6 choix, exactement un correct, refusé sinon.
-  - RG-07 : les questions envoyées à l'étudiant ne contiennent jamais le choix correct.
-  - RG-08 : questions verrouillées dès qu'il y a une tentative.
-  - RG-09 : suppression bloquée si le cours a des examens / l'examen a des tentatives.
-  - RG-10/RG-11 : désactivation au lieu de suppression, message distinct si compte désactivé.
-  - RG-12 : note + correction affichées immédiatement après soumission.
-  - RG-13 : chaque erreur simulée a un message et un statut HTTP cohérent.
+## Architecture
 
-## Comment fusionner avec votre repo existant
+- `src/api/client.js` — wrapper `fetch` commun : ajoute le header `Authorization: Bearer`
+  à partir du token stocké après connexion, et normalise les erreurs de l'API (RG-13).
+- `src/api/authApi.js` — appel de connexion (`POST /api/auth/login`).
+- `src/api/realApi.js` — toutes les autres routes (étudiants, cours, examens, questions,
+  résultats, espace étudiant). Chaque fonction convertit entre le format renvoyé par le
+  backend et celui utilisé par les pages.
+- `src/context/AuthContext.jsx` — session utilisateur (token + rôle), persistée en
+  `localStorage`.
+- `src/components/ProtectedRoute.jsx` — protection des routes par rôle : non connecté →
+  `/login` ; connecté avec le mauvais rôle → redirigé vers son propre espace.
 
-Rien ici n'est fait pour remplacer votre travail — objectif : piocher ce qui manque.
+## Fonctionnalités
 
-1. **Routing** : votre `App.jsx` actuel n'a pas de routing (`react-router-dom`). Le `App.jsx`
-   de ce prototype montre la structure complète attendue — vous pouvez le copier tel quel dans
-   votre projet et brancher vos propres pages dessus.
-2. **Login** : `src/pages/auth/LoginPage.jsx` reprend exactement votre design (dégradé
-   violet/rose, deux colonnes) — seul changement : le champ "Nom d'utilisateur" devient un champ
-   email (le sujet impose email + mot de passe), et il est branché à `AuthContext` au lieu d'un
-   `useState` local dans `App.jsx`.
-3. **`AuthContext.jsx` + `ProtectedRoute.jsx`** : à copier tels quels dans `src/context/` et
-   `src/components/`. C'est ce qui manquait pour distinguer admin/étudiant et protéger les
-   routes.
-4. **Pages admin/étudiant** : chaque fichier de `src/pages/admin/` et `src/pages/student/`
-   correspond à une route du sujet. Si votre `AdminDashboard.jsx` ou `StudentDashboard.jsx`
-   existant a déjà un meilleur design, gardez le vôtre et remplacez juste sa logique de données
-   (mock en dur → `import * as api from "../api/mockApi"`), le reste peut rester.
-5. **`src/api/mockApi.js`** : conçu pour être remplacé plus tard par de vrais appels `fetch()`
-   vers l'API Express, sans changer les pages — chaque fonction a déjà le nom et la forme d'un
-   futur appel réel (`login`, `getStudents`, `submitExam`, etc.).
-
-## Ce qui n'est PAS dans ce prototype
-
-- Pas de vrai backend, pas de JWT réel, pas de hachage bcrypt (mock uniquement).
-- La landing page publique (Home/About/Services/Blog) n'est pas incluse ici — elle n'est de
-  toute façon pas dans les routes imposées par le sujet, gardez votre version existante et
-  branchez juste `/login` dessus.
-
-
-## Le compte fonctionnel  
-Email    : admin@exam-hub.test
-Password : Admin123!
+- Toutes les routes imposées par le sujet (`/login`, `/admin/...`, `/student/...`),
+  déclarées avec `react-router-dom`.
+- Espace admin : tableau de bord, gestion des étudiants (création, réinitialisation de mot
+  de passe, désactivation/réactivation), des cours, des examens, éditeur de questions
+  (verrouillage visible dès qu'il y a une tentative, RG-08), page de résultats par examen.
+- Espace étudiant : liste des examens disponibles, passage d'examen (confirmation avant
+  soumission), page de résultat avec correction colorée juste/faux, historique des
+  résultats.
+- Les erreurs renvoyées par l'API (format RG-13) sont affichées à l'utilisateur.

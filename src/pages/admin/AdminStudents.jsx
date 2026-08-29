@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Plus, KeyRound, UserX } from "lucide-react";
-import * as api from "../../api/mockApi";
+import { Plus, KeyRound, UserX, UserCheck } from "lucide-react";
+import * as api from "../../api/realApi";
 import { PageHeader, ErrorBanner, Badge, Button, Modal, Field, inputClass, EmptyState } from "../../components/ui";
 
 export default function AdminStudents() {
@@ -55,6 +55,16 @@ export default function AdminStudents() {
     }
   }
 
+  async function handleReactivate(student) {
+    if (!window.confirm(`Réactiver le compte de ${student.name} ?`)) return;
+    try {
+      await api.reactivateStudent(student.id);
+      await load();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   return (
     <div>
       <PageHeader
@@ -99,13 +109,21 @@ export default function AdminStudents() {
                       >
                         <KeyRound className="w-4 h-4" />
                       </button>
-                      {s.active && (
+                      {s.active ? (
                         <button
                           onClick={() => handleDeactivate(s)}
                           title="Désactiver"
                           className="p-2 rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-500 cursor-pointer"
                         >
                           <UserX className="w-4 h-4" />
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleReactivate(s)}
+                          title="Réactiver"
+                          className="p-2 rounded-lg text-slate-400 hover:bg-green-50 hover:text-green-600 cursor-pointer"
+                        >
+                          <UserCheck className="w-4 h-4" />
                         </button>
                       )}
                     </div>

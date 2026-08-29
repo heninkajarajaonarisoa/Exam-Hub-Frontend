@@ -20,9 +20,16 @@ export async function fetchApi(endpoint, options = {}) {
 
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
-    throw new Error(errorData.message || "Une erreur est survenue");
+    const err = new Error(errorData.message || "Une erreur est survenue");
+    err.status = response.status;
+    throw err;
   }
 
-  if (response.status === 204) return null;
-return response.json();
+  // Les suppressions (DELETE) renvoient 204 No Content, sans corps JSON :
+  // response.json() planterait dessus ("Unexpected end of JSON input").
+  if (response.status === 204) {
+    return null;
+  }
+
+  return response.json();
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import * as api from "../../api/mockApi";
+import * as api from "../../api/realApi";
 import { PageHeader, ErrorBanner, Button, Modal, Field, inputClass, EmptyState } from "../../components/ui";
 
 const emptyForm = { code: "", name: "", description: "" };

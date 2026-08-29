@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import * as api from "../../api/mockApi";
+import * as api from "../../api/realApi";
 import { PageHeader, EmptyState } from "../../components/ui";
 
 export default function AdminExamResults() {

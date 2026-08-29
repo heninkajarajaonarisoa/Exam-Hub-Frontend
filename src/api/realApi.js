@@ -1,4 +1,3 @@
-
 import { fetchApi } from "./client";
 
 export function resetMockDb() {
@@ -13,10 +12,6 @@ export async function login(email, password) {
   });
 }
 
-
-
-
-// admin:students 
 
 function mapStudent(u) {
   return { id: u.id, role: u.role, name: u.name, email: u.email, active: u.is_active };
@@ -48,12 +43,15 @@ export async function deactivateStudent(id) {
   return mapStudent(student);
 }
 
+export async function reactivateStudent(id) {
+  const student = await fetchApi(`/students/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({ isActive: true }),
+  });
+  return mapStudent(student);
+}
 
 
-
-
-
-// admin:courses 
 
 export async function getCourses() {
   return fetchApi("/courses");
@@ -78,11 +76,6 @@ export async function deleteCourse(id) {
   return { deleted: true };
 }
 
-
-
-
-
-// admin: exams 
 
 function mapExam(e, { courseCode, questionCount, attemptCount } = {}) {
   return {
@@ -149,10 +142,6 @@ export async function deleteExam(id) {
   return { deleted: true };
 }
 
-
-
-// admin: questions 
-
 function mapChoiceOut(c) {
   return { id: c.id, text: c.label, correct: c.is_correct };
 }
@@ -208,7 +197,6 @@ export async function deleteQuestion(id) {
   return { deleted: true };
 }
 
-//  admin: results 
 
 export async function getExamResults(examId) {
   const r = await fetchApi(`/exams/${examId}/results`);
@@ -223,8 +211,6 @@ export async function getExamResults(examId) {
     attemptCount: r.attemptsCount,
   };
 }
-
-//  student: exams 
 
 export async function getMyExams(_studentId) {
   const exams = await fetchApi("/my/exams");

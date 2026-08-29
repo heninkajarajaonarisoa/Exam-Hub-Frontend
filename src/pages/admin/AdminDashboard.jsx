@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Users, BookOpen, FileCheck2, BarChart3 } from "lucide-react";
-import * as api from "../../api/mockApi";
+import * as api from "../../api/realApi";
 import { PageHeader } from "../../components/ui";
 
 export default function AdminDashboard() {
